@@ -691,7 +691,17 @@
   // ═══════════════════════════════════════════════
   const NAV_PAGES = ['inicio','amor','autoconhecimento','familia','comunicacao','historias','sobre','artigo','contato','privacidade','termos'];
 
+  // Histórico interno de navegação
+  let navHistory = ['inicio'];
+  let currentPage = 'inicio';
+
   function showPage(name) {
+    // Só adiciona ao histórico se for página diferente
+    if(name !== currentPage) {
+      navHistory.push(name);
+      currentPage = name;
+    }
+
     NAV_PAGES.forEach(p => {
       const el = document.getElementById('page-'+p);
       if(el) el.classList.toggle('active', p===name);
@@ -701,6 +711,28 @@
     });
     window.scrollTo({top:0, behavior:'smooth'});
     if(name !== 'artigo') renderPage(name);
+  }
+
+  function goBack() {
+    // Remove a página atual do histórico
+    if(navHistory.length > 1) {
+      navHistory.pop(); // remove atual
+      const prev = navHistory[navHistory.length - 1]; // pega o anterior
+      currentPage = prev;
+
+      NAV_PAGES.forEach(p => {
+        const el = document.getElementById('page-'+p);
+        if(el) el.classList.toggle('active', p===prev);
+      });
+      document.querySelectorAll('nav a').forEach(a => {
+        a.classList.toggle('active', a.dataset.page === prev);
+      });
+      window.scrollTo({top:0, behavior:'smooth'});
+      if(prev !== 'artigo') renderPage(prev);
+    } else {
+      // Se não há histórico, vai para início
+      showPage('inicio');
+    }
   }
 
   function renderPage(name) {
@@ -776,7 +808,7 @@
       <p class="af-meta">${a.date||''} · ${a.time||5} min de leitura</p>
       ${a.content}
       <div class="ornament" style="margin-top:40px;">✦ ✦ ✦</div>
-      <button class="back-btn" onclick="history.go(-1) || showPage('inicio')">← Voltar</button>`;
+      <button class="back-btn" onclick="goBack()">← Voltar</button>`;
     showPage('artigo');
   }
 
