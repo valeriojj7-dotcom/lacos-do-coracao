@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Laços do Coração – Amor, Relacionamentos & Vida a Dois</title>
+  <meta name="description" content="Dicas, reflexões e histórias sobre amor, relacionamentos, autoconhecimento e vida a dois."/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --wine:    #6B1F2A;
+      --rose:    #C0526B;
+      --blush:   #F2D9DC;
+      --cream:   #FAF5F0;
+      --gold:    #B8860B;
+      --ink:     #1C1014;
+      --muted:   #7A6068;
+      --border:  #E4CDD0;
+      --white:   #FFFFFF;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--cream); color: var(--ink); font-family: 'Lora', Georgia, serif; line-height: 1.7; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* TOPBAR */
+    .topbar { background: var(--wine); color: var(--blush); text-align: center; font-family: 'DM Sans', sans-serif; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 8px 16px; }
+
+    /* HEADER */
+    header { background: var(--white); border-bottom: 1px solid var(--border); padding: 28px 24px 0; text-align: center; }
+    .site-name { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(2.4rem, 6vw, 4.2rem); font-weight: 900; color: var(--wine); line-height: 1.05; letter-spacing: -0.02em; }
+    .site-name span { color: var(--rose); font-style: italic; }
+    .site-tagline { font-family: 'DM Sans', sans-serif; font-size: 0.82rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin: 8px 0 20px; }
+    nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 0; border-top: 1px solid var(--border); margin-top: 4px; }
+    nav a { font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.14em; color: var(--wine); padding: 13px 20px; border-bottom: 2px solid transparent; transition: border-color 0.2s, color 0.2s; cursor: pointer; }
+    nav a:hover, nav a.active { border-bottom-color: var(--rose); color: var(--rose); }
+
+    /* AD ZONE */
+    .ad-zone { background: #f0e8ea; border: 2px dashed var(--border); border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; color: var(--muted); font-family: 'DM Sans', sans-serif; font-size: 0.73rem; letter-spacing: 0.08em; text-align: center; padding: 10px; }
+    .ad-zone::before { content: "PUBLICIDADE"; font-size: 0.62rem; letter-spacing: 0.18em; color: var(--rose); font-weight: 500; }
+    .ad-zone .ad-size { font-size: 0.68rem; color: #b09098; }
+    .ad-header-wrap { background: var(--white); padding: 14px 0; display: flex; justify-content: center; border-bottom: 1px solid var(--border); }
+    #adsterra-header { width: 728px; max-width: 100%; min-height: 90px; }
+
+    /* LAYOUT */
+    .page-wrap { max-width: 1160px; margin: 0 auto; padding: 0 20px; }
+
+    /* PAGE SECTIONS */
+    .page-section { display: none; }
+    .page-section.active { display: block; }
+
+    /* HERO */
+    .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin: 40px 0 36px; background: var(--white); border: 1px solid var(--border); border-radius: 2px; overflow: hidden; box-shadow: 0 4px 32px rgba(107,31,42,0.07); }
+    .hero-img { background: linear-gradient(135deg, #c0526b 0%, #6b1f2a 100%); min-height: 380px; display: flex; align-items: center; justify-content: center; font-size: 5rem; position: relative; overflow: hidden; }
+    .hero-body { padding: 44px 40px; display: flex; flex-direction: column; justify-content: center; }
+    .hero-category { font-family: 'DM Sans', sans-serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose); margin-bottom: 14px; }
+    .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 700; line-height: 1.2; color: var(--wine); margin-bottom: 16px; }
+    .hero-excerpt { font-size: 0.97rem; color: var(--muted); margin-bottom: 24px; font-style: italic; }
+    .btn-read { display: inline-flex; align-items: center; gap: 8px; background: var(--wine); color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; padding: 12px 24px; border-radius: 1px; transition: background 0.2s; width: fit-content; cursor: pointer; border: none; }
+    .btn-read:hover { background: var(--rose); }
+    .post-meta { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; color: #9e8088; margin-top: 20px; letter-spacing: 0.06em; }
+    .ornament { text-align: center; color: var(--border); font-size: 1.4rem; letter-spacing: 0.4em; margin: 12px 0 32px; user-select: none; }
+
+    /* CONTENT GRID */
+    .content-grid { display: grid; grid-template-columns: 1fr 300px; gap: 40px; margin-bottom: 60px; }
+    .section-label { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
+    .section-label h2 { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--wine); white-space: nowrap; }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    /* ARTICLE CARDS */
+    .articles-list { display: flex; flex-direction: column; gap: 32px; }
+    .article-card { display: grid; grid-template-columns: 140px 1fr; gap: 20px; background: var(--white); border: 1px solid var(--border); border-radius: 2px; overflow: hidden; transition: box-shadow 0.2s, transform 0.2s; cursor: pointer; }
+    .article-card:hover { box-shadow: 0 8px 32px rgba(107,31,42,0.10); transform: translateY(-2px); }
+    .card-thumb { min-height: 140px; display: flex; align-items: center; justify-content: center; font-size: 2.6rem; }
+    .card-thumb.c1 { background: linear-gradient(135deg,#f2a7b3,#c0526b); }
+    .card-thumb.c2 { background: linear-gradient(135deg,#f7d4a0,#c88c2a); }
+    .card-thumb.c3 { background: linear-gradient(135deg,#b3d4f2,#2a6cc8); }
+    .card-thumb.c4 { background: linear-gradient(135deg,#b3f2c8,#2ac86a); }
+    .card-thumb.c5 { background: linear-gradient(135deg,#e8b3f2,#8c2ac8); }
+    .card-thumb.c6 { background: linear-gradient(135deg,#ffd6a5,#ff9a00); }
+    .card-thumb.c7 { background: linear-gradient(135deg,#a8e6cf,#00b09b); }
+    .card-body { padding: 18px 20px 18px 0; display: flex; flex-direction: column; justify-content: center; }
+    .card-category { font-family: 'DM Sans', sans-serif; font-size: 0.65rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose); margin-bottom: 8px; }
+    .card-title { font-family: 'Playfair Display', serif; font-size: 1.08rem; font-weight: 700; color: var(--wine); line-height: 1.3; margin-bottom: 8px; }
+    .card-excerpt { font-size: 0.85rem; color: var(--muted); font-style: italic; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .card-meta { font-family: 'DM Sans', sans-serif; font-size: 0.68rem; color: #b09098; margin-top: 10px; }
+    #adsterra-incontent { margin: 32px 0; display: flex; justify-content: center; }
+
+    /* SIDEBAR */
+    .sidebar { display: flex; flex-direction: column; gap: 28px; }
+    .sidebar-widget { background: var(--white); border: 1px solid var(--border); border-radius: 2px; padding: 24px; }
+    .widget-title { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--wine); padding-bottom: 12px; border-bottom: 1px solid var(--border); margin-bottom: 16px; }
+    .popular-list { display: flex; flex-direction: column; gap: 14px; }
+    .popular-item { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; }
+    .popular-num { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 900; color: var(--blush); line-height: 1; min-width: 28px; }
+    .popular-title { font-size: 0.85rem; font-weight: 600; color: var(--ink); line-height: 1.3; }
+    .popular-title:hover { color: var(--rose); }
+    .category-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag { font-family: 'DM Sans', sans-serif; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 12px; border: 1px solid var(--border); border-radius: 1px; color: var(--wine); cursor: pointer; transition: all 0.2s; }
+    .tag:hover { background: var(--wine); color: var(--white); border-color: var(--wine); }
+    #adsterra-sidebar-1, #adsterra-sidebar-2 { width: 100%; min-height: 250px; }
+    .newsletter { background: var(--wine); color: var(--white); border-color: var(--wine); }
+    .newsletter .widget-title { color: var(--blush); border-color: rgba(255,255,255,0.2); }
+    .newsletter p { font-size: 0.85rem; color: rgba(255,255,255,0.8); margin-bottom: 14px; font-style: italic; }
+    .nl-input { width: 100%; padding: 10px 14px; border: 1px solid rgba(255,255,255,0.3); border-radius: 1px; background: rgba(255,255,255,0.1); color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 0.82rem; margin-bottom: 10px; outline: none; }
+    .nl-input::placeholder { color: rgba(255,255,255,0.5); }
+    .nl-btn { width: 100%; padding: 11px; background: var(--rose); color: var(--white); border: none; border-radius: 1px; font-family: 'DM Sans', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; }
+    .nl-btn:hover { background: #d4637a; }
+
+    /* ABOUT PAGE */
+    .about-hero { background: linear-gradient(135deg, var(--wine) 0%, var(--rose) 100%); border-radius: 2px; padding: 60px 40px; text-align: center; color: var(--white); margin: 40px 0 40px; }
+    .about-hero h1 { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 900; margin-bottom: 16px; }
+    .about-hero p { font-size: 1.05rem; max-width: 600px; margin: 0 auto; opacity: 0.9; font-style: italic; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 48px; }
+    .about-card { background: var(--white); border: 1px solid var(--border); padding: 32px; border-radius: 2px; }
+    .about-card h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--wine); margin-bottom: 16px; }
+    .about-card p { color: var(--muted); font-size: 0.95rem; line-height: 1.8; }
+    .about-avatar { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--rose), var(--wine)); display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 20px; }
+    .author-box { background: var(--white); border: 1px solid var(--border); padding: 40px; border-radius: 2px; text-align: center; margin-bottom: 40px; }
+    .author-box h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--wine); margin-bottom: 8px; }
+    .author-box .author-role { font-family: 'DM Sans', sans-serif; font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose); margin-bottom: 20px; }
+    .author-box p { color: var(--muted); max-width: 600px; margin: 0 auto; line-height: 1.9; }
+    .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 48px; }
+    .stat-box { background: var(--white); border: 1px solid var(--border); padding: 28px 20px; text-align: center; border-radius: 2px; }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 900; color: var(--wine); }
+    .stat-label { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+    .values-section { margin-bottom: 48px; }
+    .values-section h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--wine); margin-bottom: 24px; text-align: center; }
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .value-item { background: var(--white); border: 1px solid var(--border); padding: 28px; border-radius: 2px; }
+    .value-icon { font-size: 2rem; margin-bottom: 12px; }
+    .value-item h4 { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--wine); margin-bottom: 10px; }
+    .value-item p { font-size: 0.87rem; color: var(--muted); }
+
+    /* FULL ARTICLE */
+    .article-full { background: var(--white); border: 1px solid var(--border); border-radius: 2px; padding: 48px; margin: 40px 0; }
+    .article-full .af-category { font-family: 'DM Sans', sans-serif; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose); margin-bottom: 16px; }
+    .article-full h1 { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 900; color: var(--wine); line-height: 1.2; margin-bottom: 20px; }
+    .article-full .af-meta { font-family: 'DM Sans', sans-serif; font-size: 0.75rem; color: var(--muted); margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+    .article-full p { margin-bottom: 20px; font-size: 1rem; line-height: 1.9; }
+    .article-full h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--wine); margin: 36px 0 16px; }
+    .article-full blockquote { border-left: 3px solid var(--rose); padding: 20px 28px; margin: 32px 0; background: var(--blush); font-style: italic; font-size: 1.08rem; color: var(--wine); border-radius: 0 2px 2px 0; }
+    .article-full ul { padding-left: 24px; margin-bottom: 20px; }
+    .article-full ul li { margin-bottom: 10px; font-size: 0.97rem; }
+    .back-btn { display: inline-flex; align-items: center; gap: 6px; font-family: 'DM Sans', sans-serif; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--wine); cursor: pointer; margin-top: 40px; }
+    .back-btn:hover { color: var(--rose); }
+
+    /* CONTACT */
+    .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 40px 0 60px; }
+    .contact-info h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--wine); margin-bottom: 20px; }
+    .contact-info p { color: var(--muted); margin-bottom: 20px; line-height: 1.9; }
+    .contact-detail { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; font-family: 'DM Sans', sans-serif; font-size: 0.88rem; color: var(--ink); }
+    .contact-detail span.icon { font-size: 1.2rem; }
+    .contact-form { background: var(--white); border: 1px solid var(--border); padding: 36px; border-radius: 2px; }
+    .contact-form h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--wine); margin-bottom: 24px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-family: 'DM Sans', sans-serif; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+    .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px 16px; border: 1px solid var(--border); border-radius: 1px; font-family: 'Lora', serif; font-size: 0.92rem; color: var(--ink); background: var(--cream); outline: none; transition: border-color 0.2s; }
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--rose); }
+    .form-group textarea { height: 140px; resize: vertical; }
+    .submit-btn { width: 100%; padding: 14px; background: var(--wine); color: var(--white); border: none; border-radius: 1px; font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; }
+    .submit-btn:hover { background: var(--rose); }
+    .faq-section { margin-bottom: 48px; }
+    .faq-section h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--wine); margin-bottom: 24px; }
+    .faq-item { background: var(--white); border: 1px solid var(--border); border-radius: 2px; margin-bottom: 12px; overflow: hidden; }
+    .faq-q { padding: 20px 24px; font-family: 'DM Sans', sans-serif; font-weight: 500; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--wine); }
+    .faq-a { padding: 0 24px 20px; font-size: 0.92rem; color: var(--muted); line-height: 1.8; display: none; }
+    .faq-item.open .faq-a { display: block; }
+    .faq-item.open .faq-q { border-bottom: 1px solid var(--border); }
+    .faq-chevron { transition: transform 0.2s; }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+
+    /* PRIVACY / TERMS */
+    .legal-page { background: var(--white); border: 1px solid var(--border); padding: 48px; border-radius: 2px; margin: 40px 0 60px; }
+    .legal-page h1 { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--wine); margin-bottom: 8px; }
+    .legal-page .legal-date { font-family: 'DM Sans', sans-serif; font-size: 0.78rem; color: var(--muted); margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+    .legal-page h2 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--wine); margin: 28px 0 12px; }
+    .legal-page p { color: var(--muted); margin-bottom: 16px; line-height: 1.9; font-size: 0.95rem; }
+    .legal-page ul { padding-left: 24px; margin-bottom: 16px; color: var(--muted); font-size: 0.95rem; }
+    .legal-page ul li { margin-bottom: 8px; }
+
+    /* ════════ ADMIN PANEL ════════ */
+    #admin-toggle-btn { position: fixed; bottom: 28px; right: 28px; z-index: 9000; background: var(--wine); color: var(--white); border: none; border-radius: 50%; width: 56px; height: 56px; font-size: 1.4rem; cursor: pointer; box-shadow: 0 4px 20px rgba(107,31,42,0.4); transition: background 0.2s, transform 0.2s; }
+    #admin-toggle-btn:hover { background: var(--rose); transform: scale(1.08); }
+
+    #admin-overlay { display: none; position: fixed; inset: 0; z-index: 9500; background: rgba(28,16,20,0.55); backdrop-filter: blur(2px); }
+    #admin-overlay.open { display: block; }
+
+    #admin-panel { position: fixed; top: 0; right: -700px; width: min(700px, 100vw); height: 100vh; z-index: 9999; background: var(--white); box-shadow: -8px 0 48px rgba(28,16,20,0.18); transition: right 0.35s cubic-bezier(.4,0,.2,1); display: flex; flex-direction: column; overflow: hidden; }
+    #admin-panel.open { right: 0; }
+
+    .admin-header { background: var(--wine); color: var(--white); padding: 24px 28px; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+    .admin-header h2 { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; }
+    .admin-header p { font-family: 'DM Sans', sans-serif; font-size: 0.75rem; opacity: 0.75; margin-top: 2px; }
+    .admin-close { background: none; border: none; color: var(--white); font-size: 1.6rem; cursor: pointer; opacity: 0.8; line-height: 1; }
+    .admin-close:hover { opacity: 1; }
+
+    .admin-login { padding: 40px 28px; }
+    .admin-login h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--wine); margin-bottom: 8px; }
+    .admin-login p { font-size: 0.88rem; color: var(--muted); margin-bottom: 28px; }
+    .admin-login-btn { width: 100%; padding: 13px; background: var(--wine); color: var(--white); border: none; border-radius: 1px; font-family: 'DM Sans', sans-serif; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; margin-top: 8px; }
+    .admin-login-btn:hover { background: var(--rose); }
+    .admin-error { color: #c0392b; font-family: 'DM Sans', sans-serif; font-size: 0.8rem; margin-top: 8px; display: none; }
+
+    .admin-body { display: none; flex-direction: column; flex: 1; overflow: hidden; }
+    .admin-body.visible { display: flex; }
+
+    .admin-tabs { display: flex; border-bottom: 1px solid var(--border); flex-shrink: 0; }
+    .admin-tab { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 14px 20px; cursor: pointer; border-bottom: 2px solid transparent; color: var(--muted); background: none; border-top: none; border-left: none; border-right: none; }
+    .admin-tab.active { color: var(--wine); border-bottom-color: var(--rose); }
+
+    .admin-content { flex: 1; overflow-y: auto; padding: 28px; }
+    .admin-section { display: none; }
+    .admin-section.active { display: block; }
+
+    .admin-field { margin-bottom: 20px; }
+    .admin-field label { display: block; font-family: 'DM Sans', sans-serif; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 7px; }
+    .admin-field input, .admin-field textarea, .admin-field select { width: 100%; padding: 10px 14px; border: 1px solid var(--border); border-radius: 1px; font-family: 'Lora', serif; font-size: 0.9rem; color: var(--ink); background: var(--cream); outline: none; transition: border-color 0.2s; }
+    .admin-field input:focus, .admin-field textarea:focus { border-color: var(--rose); }
+    .admin-field textarea { height: 120px; resize: vertical; }
+    .admin-save-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--wine); color: var(--white); border: none; border-radius: 1px; font-family: 'DM Sans', sans-serif; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 11px 22px; cursor: pointer; transition: background 0.2s; margin-top: 4px; }
+    .admin-save-btn:hover { background: var(--rose); }
+    .admin-section h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--wine); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+    .admin-section h4 { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--wine); margin: 24px 0 14px; }
+    .admin-toast { position: fixed; bottom: 100px; right: 28px; background: #27ae60; color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 0.82rem; padding: 12px 22px; border-radius: 2px; z-index: 99999; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
+    .admin-toast.show { opacity: 1; }
+
+    .article-manage-list { display: flex; flex-direction: column; gap: 12px; }
+    .article-manage-item { background: var(--cream); border: 1px solid var(--border); border-radius: 2px; padding: 16px; display: flex; justify-content: space-between; align-items: center; }
+    .article-manage-item .ami-title { font-family: 'Playfair Display', serif; font-size: 0.9rem; color: var(--wine); flex: 1; }
+    .article-manage-item .ami-cat { font-family: 'DM Sans', sans-serif; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--rose); margin-top: 3px; }
+    .ami-actions { display: flex; gap: 8px; flex-shrink: 0; margin-left: 16px; }
+    .ami-edit-btn, .ami-del-btn { font-family: 'DM Sans', sans-serif; font-size: 0.7rem; padding: 6px 12px; border: 1px solid var(--border); border-radius: 1px; cursor: pointer; transition: all 0.2s; background: var(--white); }
+    .ami-edit-btn { color: var(--wine); }
+    .ami-edit-btn:hover { background: var(--wine); color: var(--white); border-color: var(--wine); }
+    .ami-del-btn { color: #c0392b; border-color: #c0392b; }
+    .ami-del-btn:hover { background: #c0392b; color: var(--white); }
+    .add-article-form { background: var(--cream); border: 1px solid var(--border); padding: 24px; border-radius: 2px; margin-bottom: 28px; }
+
+    /* FOOTER */
+    .ad-footer-wrap { background: #f0e8ea; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 16px 0; display: flex; justify-content: center; }
+    #adsterra-footer { width: 728px; max-width: 100%; min-height: 90px; }
+    footer { background: var(--ink); color: rgba(255,255,255,0.6); padding: 40px 24px 24px; text-align: center; }
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 900; color: var(--blush); margin-bottom: 8px; }
+    .footer-logo span { color: var(--rose); font-style: italic; }
+    .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 4px 20px; margin: 16px 0; }
+    .footer-links a { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.5); transition: color 0.2s; cursor: pointer; }
+    .footer-links a:hover { color: var(--blush); }
+    .footer-copy { font-family: 'DM Sans', sans-serif; font-size: 0.7rem; color: rgba(255,255,255,0.3); margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 16px; }
+
+    /* RESPONSIVE */
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-img { min-height: 220px; }
+      .content-grid { grid-template-columns: 1fr; }
+      .sidebar { order: -1; }
+      .about-grid { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .values-grid { grid-template-columns: 1fr; }
+      .contact-layout { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 520px) {
+      .article-card { grid-template-columns: 1fr; }
+      .card-body { padding: 16px; }
+      .article-full { padding: 24px; }
+      .legal-page { padding: 24px; }
+      .stats-row { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">✦ Amor · Relacionamentos · Autoconhecimento · Vida a Dois ✦</div>
+
+  <header>
+    <p class="site-tagline">O seu espaço sobre amor</p>
+    <div class="site-name">Laços do <span>Coração</span></div>
+    <nav id="main-nav">
+      <a onclick="showPage('inicio')" class="active" data-page="inicio">Início</a>
+      <a onclick="showPage('amor')" data-page="amor">Amor & Casal</a>
+      <a onclick="showPage('autoconhecimento')" data-page="autoconhecimento">Autoconhecimento</a>
+      <a onclick="showPage('familia')" data-page="familia">Família</a>
+      <a onclick="showPage('comunicacao')" data-page="comunicacao">Comunicação</a>
+      <a onclick="showPage('historias')" data-page="historias">Histórias Reais</a>
+      <a onclick="showPage('sobre')" data-page="sobre">Sobre</a>
+    </nav>
+  </header>
+
+  <div class="ad-header-wrap">
+    <div id="adsterra-header">
+      <div class="ad-zone" style="width:100%;min-height:90px;">
+        <span class="ad-size">Espaço para Anúncio Adsterra · 728×90</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-wrap">
+
+    <!-- ══════════ INÍCIO ══════════ -->
+    <div id="page-inicio" class="page-section active">
+      <article class="hero">
+        <div class="hero-img">💑</div>
+        <div class="hero-body">
+          <span class="hero-category">✦ Destaque da Semana</span>
+          <h1 class="hero-title" id="hero-title">7 Sinais de que o Seu Relacionamento Está Crescendo Juntos</h1>
+          <p class="hero-excerpt" id="hero-excerpt">Crescer a dois exige mais do que amor — exige intenção, paciência e conversas honestas que mudam tudo.</p>
+          <button class="btn-read" onclick="openArticle('featured')">Ler Artigo →</button>
+          <p class="post-meta" id="hero-meta">28 de Abril, 2025 · 6 min de leitura</p>
+        </div>
+      </article>
+      <div class="ornament">✦ ✦ ✦</div>
+      <div class="content-grid">
+        <main>
+          <div class="section-label"><h2>Artigos Recentes</h2></div>
+          <div class="articles-list" id="home-articles-list"></div>
+        </main>
+        <aside class="sidebar">
+          <div id="adsterra-sidebar-1">
+            <div class="ad-zone" style="min-height:250px;"><span class="ad-size">Anúncio Adsterra · 300×250</span></div>
+          </div>
+          <div class="sidebar-widget">
+            <h3 class="widget-title">Mais Lidos</h3>
+            <div class="popular-list" id="popular-list"></div>
+          </div>
+          <div class="sidebar-widget newsletter">
+            <h3 class="widget-title">Receba por Email</h3>
+            <p>Novos artigos toda semana. Grátis, sem spam.</p>
+            <input class="nl-input" type="email" placeholder="O seu melhor email"/>
+            <button class="nl-btn" onclick="subscribeNewsletter(this)">Quero Receber ✦</button>
+          </div>
+          <div class="sidebar-widget">
+            <h3 class="widget-title">Categorias</h3>
+            <div class="category-tags">
+              <span class="tag" onclick="showPage('amor')">Amor & Casal</span>
+              <span class="tag" onclick="showPage('comunicacao')">Comunicação</span>
+              <span class="tag" onclick="showPage('autoconhecimento')">Autoconhecimento</span>
+              <span class="tag" onclick="showPage('familia')">Família</span>
+              <span class="tag">Sexualidade</span>
+              <span class="tag">Términos</span>
+              <span class="tag">Recomeços</span>
+              <span class="tag" onclick="showPage('historias')">Histórias Reais</span>
+            </div>
+          </div>
+          <div id="adsterra-sidebar-2">
+            <div class="ad-zone" style="min-height:250px;"><span class="ad-size">Anúncio Adsterra · 300×250</span></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <!-- ══════════ AMOR & CASAL ══════════ -->
+    <div id="page-amor" class="page-section">
+      <div style="margin:40px 0 36px;">
+        <div class="section-label"><h2>Amor & Casal</h2></div>
+        <div class="articles-list" id="amor-list"></div>
+      </div>
+    </div>
+
+    <!-- ══════════ AUTOCONHECIMENTO ══════════ -->
+    <div id="page-autoconhecimento" class="page-section">
+      <div style="margin:40px 0 36px;">
+        <div class="section-label"><h2>Autoconhecimento</h2></div>
+        <div class="articles-list" id="autoconhecimento-list"></div>
+      </div>
+    </div>
+
+    <!-- ══════════ FAMÍLIA ══════════ -->
+    <div id="page-familia" class="page-section">
+      <div style="margin:40px 0 36px;">
+        <div class="section-label"><h2>Família</h2></div>
+        <div class="articles-list" id="familia-list"></div>
+      </div>
+    </div>
+
+    <!-- ══════════ COMUNICAÇÃO ══════════ -->
+    <div id="page-comunicacao" class="page-section">
+      <div style="margin:40px 0 36px;">
+        <div class="section-label"><h2>Comunicação</h2></div>
+        <div class="articles-list" id="comunicacao-list"></div>
+      </div>
+    </div>
+
+    <!-- ══════════ HISTÓRIAS REAIS ══════════ -->
+    <div id="page-historias" class="page-section">
+      <div style="margin:40px 0 36px;">
+        <div class="section-label"><h2>Histórias Reais</h2></div>
+        <div class="articles-list" id="historias-list"></div>
+      </div>
+    </div>
+
+    <!-- ══════════ SOBRE ══════════ -->
+    <div id="page-sobre" class="page-section">
+      <div class="about-hero">
+        <h1>Sobre o Laços do Coração</h1>
+        <p>Um espaço criado com amor, para quem acredita que amar bem é uma arte que se aprende todos os dias.</p>
+      </div>
+      <div class="stats-row">
+        <div class="stat-box"><div class="stat-num" id="stat-articles">47</div><div class="stat-label">Artigos Publicados</div></div>
+        <div class="stat-box"><div class="stat-num">12K</div><div class="stat-label">Leitores Mensais</div></div>
+        <div class="stat-box"><div class="stat-num">3</div><div class="stat-label">Anos de Conteúdo</div></div>
+        <div class="stat-box"><div class="stat-num">98%</div><div class="stat-label">Avaliações Positivas</div></div>
+      </div>
+      <div class="author-box">
+        <div class="about-avatar">👩‍💼</div>
+        <h2 id="about-author-name">Ana Luísa Ferreira</h2>
+        <p class="author-role" id="about-author-role">Escritora · Conselheira de Relacionamentos · Fundadora</p>
+        <p id="about-author-bio">Sou terapeuta de casais há mais de 10 anos e acredito que a maioria dos problemas nos relacionamentos nasce de uma falta de autoconhecimento e de comunicação. Criei o Laços do Coração para ser o espaço que eu gostaria de ter encontrado quando mais precisei: sem julgamentos, cheio de verdade e de amor. Aqui partilho o que aprendi nos consultórios, nas conversas honestas e nos meus próprios tropeços.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>🎯 A Nossa Missão</h3>
+          <p id="about-mission">O Laços do Coração existe para tornar o conhecimento sobre relacionamentos saudáveis acessível a todos. Acreditamos que informação clara, carinhosa e prática pode transformar a forma como as pessoas se relacionam — com os outros e consigo mesmas.</p>
+        </div>
+        <div class="about-card">
+          <h3>📚 A Nossa Abordagem</h3>
+          <p id="about-approach">Todos os artigos são escritos com base em psicologia positiva, terapia cognitivo-comportamental e na escuta ativa de centenas de histórias reais. Não oferecemos fórmulas mágicas — oferecemos ferramentas que funcionam na vida real.</p>
+        </div>
+      </div>
+      <div class="values-section">
+        <h2>Os Nossos Valores</h2>
+        <div class="values-grid">
+          <div class="value-item"><div class="value-icon">💡</div><h4>Honestidade</h4><p>Falamos de amor com verdade, mesmo quando a verdade é difícil. Porque amar de verdade começa por se conhecer de verdade.</p></div>
+          <div class="value-item"><div class="value-icon">🤝</div><h4>Respeito</h4><p>Cada relacionamento é único. Não julgamos trajetórias — apoiamos decisões conscientes e respeitamos a pluralidade do amor.</p></div>
+          <div class="value-item"><div class="value-icon">🌱</div><h4>Crescimento</h4><p>Acreditamos que somos capazes de amar melhor a cada dia. O crescimento é um processo contínuo, não um destino.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════ ARTIGO COMPLETO ══════════ -->
+    <div id="page-artigo" class="page-section">
+      <div class="article-full" id="article-full-content"></div>
+    </div>
+
+    <!-- ══════════ CONTATO ══════════ -->
+    <div id="page-contato" class="page-section">
+      <div class="contact-layout">
+        <div class="contact-info">
+          <h2>Fale Connosco</h2>
+          <p>Tem uma sugestão de tema, quer partilhar a sua história, ou simplesmente quer dizer olá? Adoramos ouvir dos nossos leitores.</p>
+          <div class="contact-detail"><span class="icon">📧</span><span>contacto@lacosdocoracao.com</span></div>
+          <div class="contact-detail"><span class="icon">📍</span><span>Portugal · Brasil · Mundo Lusófono</span></div>
+          <div class="contact-detail"><span class="icon">⏰</span><span>Respondemos em até 48 horas úteis</span></div>
+          <div class="contact-detail"><span class="icon">📱</span><span>@lacosdocoracao nas redes sociais</span></div>
+        </div>
+        <div class="contact-form">
+          <h3>Envie uma Mensagem</h3>
+          <div class="form-group"><label>Nome</label><input type="text" placeholder="O seu nome"/></div>
+          <div class="form-group"><label>Email</label><input type="email" placeholder="email@exemplo.com"/></div>
+          <div class="form-group"><label>Assunto</label>
+            <select>
+              <option>Sugestão de artigo</option>
+              <option>Partilhar a minha história</option>
+              <option>Parceria ou colaboração</option>
+              <option>Dúvida ou feedback</option>
+              <option>Outro</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Mensagem</label><textarea placeholder="Escreva aqui a sua mensagem..."></textarea></div>
+          <button class="submit-btn" onclick="submitContact(this)">Enviar Mensagem →</button>
+        </div>
+      </div>
+      <div class="faq-section">
+        <h2>Perguntas Frequentes</h2>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q">Posso enviar a minha história para publicação? <span class="faq-chevron">▾</span></div>
+          <div class="faq-a">Sim! Adoramos histórias reais. Basta enviar um email com o assunto "A Minha História" ou usar o formulário acima. Todas as histórias são publicadas de forma anónima (a menos que autorize o contrário) e passam por revisão editorial.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q">Os artigos substituem terapia ou aconselhamento profissional? <span class="faq-chevron">▾</span></div>
+          <div class="faq-a">Não. O Laços do Coração oferece informação e perspetivas para reflexão pessoal, mas não substitui o acompanhamento de um profissional de saúde mental. Se estiver a passar por um momento difícil, encorajamos a busca de apoio especializado.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q">Com que frequência são publicados novos artigos? <span class="faq-chevron">▾</span></div>
+          <div class="faq-a">Publicamos dois a três artigos por semana, sempre às terças, quintas e sábados. Subscreva a newsletter para ser o primeiro a receber!</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q">Como posso colaborar ou fazer parceria com o blog? <span class="faq-chevron">▾</span></div>
+          <div class="faq-a">Estamos abertos a colaborações com escritores, psicólogos, terapeutas e marcas alinhadas com os nossos valores. Envie um email para contacto@lacosdocoracao.com com o assunto "Parceria" e apresente a sua proposta.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════ PRIVACIDADE ══════════ -->
+    <div id="page-privacidade" class="page-section">
+      <div class="legal-page">
+        <h1>Política de Privacidade</h1>
+        <p class="legal-date">Última atualização: 1 de Janeiro de 2025</p>
+        <h2>1. Quem Somos</h2>
+        <p>O Laços do Coração é um blog dedicado a temas de amor, relacionamentos e autoconhecimento. O responsável pelo tratamento dos seus dados pessoais é a equipa editorial do Laços do Coração.</p>
+        <h2>2. Que Dados Recolhemos</h2>
+        <p>Recolhemos apenas os dados que nos fornece voluntariamente, nomeadamente:</p>
+        <ul>
+          <li>Endereço de email, quando se subscreve à newsletter;</li>
+          <li>Nome e email, quando nos envia uma mensagem através do formulário de contacto;</li>
+          <li>Dados de navegação anónimos, através de cookies de análise de tráfego.</li>
+        </ul>
+        <h2>3. Como Usamos os Seus Dados</h2>
+        <p>Os seus dados são utilizados exclusivamente para envio da newsletter (se subscrito), resposta às suas mensagens e melhoria da experiência no site. Nunca vendemos, cedemos ou partilhamos os seus dados com terceiros para fins comerciais.</p>
+        <h2>4. Cookies</h2>
+        <p>Utilizamos cookies técnicos e de análise para entender o comportamento dos visitantes e melhorar o nosso conteúdo. Pode desativar os cookies nas definições do seu browser a qualquer momento.</p>
+        <h2>5. Os Seus Direitos</h2>
+        <p>Tem direito a aceder, corrigir ou eliminar os seus dados pessoais. Para exercer estes direitos, contacte-nos em contacto@lacosdocoracao.com.</p>
+        <h2>6. Alterações a Esta Política</h2>
+        <p>Podemos atualizar esta política sempre que necessário. As alterações serão publicadas nesta página com a data de atualização.</p>
+      </div>
+    </div>
+
+    <!-- ══════════ TERMOS ══════════ -->
+    <div id="page-termos" class="page-section">
+      <div class="legal-page">
+        <h1>Termos de Uso</h1>
+        <p class="legal-date">Última atualização: 1 de Janeiro de 2025</p>
+        <h2>1. Aceitação dos Termos</h2>
+        <p>Ao aceder e utilizar o Laços do Coração, concorda com os presentes Termos de Uso. Se não concordar, por favor, não utilize o site.</p>
+        <h2>2. Conteúdo do Site</h2>
+        <p>Todo o conteúdo publicado no Laços do Coração — incluindo artigos, textos e imagens — é da propriedade intelectual do blog ou dos seus colaboradores. É proibida a reprodução total ou parcial sem autorização prévia e por escrito.</p>
+        <h2>3. Finalidade Informativa</h2>
+        <p>Os artigos e conteúdos deste blog têm carácter informativo e reflexivo. Não substituem aconselhamento médico, psicológico ou jurídico. Recomendamos sempre a consulta de profissionais qualificados em situações específicas.</p>
+        <h2>4. Responsabilidade</h2>
+        <p>O Laços do Coração não se responsabiliza por decisões tomadas com base no conteúdo publicado, nem por danos diretos ou indiretos resultantes do uso do site.</p>
+        <h2>5. Links Externos</h2>
+        <p>O site pode conter links para sites externos. Não controlamos o conteúdo desses sites e não nos responsabilizamos por eles.</p>
+        <h2>6. Alterações</h2>
+        <p>Reservamo-nos o direito de alterar estes termos a qualquer momento. A continuação do uso do site após alterações implica a aceitação dos novos termos.</p>
+      </div>
+    </div>
+
+  </div><!-- /page-wrap -->
+
+  <div class="ad-footer-wrap">
+    <div id="adsterra-footer">
+      <div class="ad-zone" style="width:100%;min-height:90px;"><span class="ad-size">Espaço para Anúncio Adsterra · 728×90</span></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">Laços do <span>Coração</span></div>
+    <p style="font-size:0.8rem;font-family:'DM Sans',sans-serif;max-width:400px;margin:0 auto;">Amor, relacionamentos e autoconhecimento para quem acredita que pode amar melhor.</p>
+    <div class="footer-links">
+      <a onclick="showPage('inicio')">Início</a>
+      <a onclick="showPage('sobre')">Sobre</a>
+      <a onclick="showPage('contato')">Contato</a>
+      <a onclick="showPage('privacidade')">Política de Privacidade</a>
+      <a onclick="showPage('termos')">Termos de Uso</a>
+    </div>
+    <p class="footer-copy">© 2025 Laços do Coração · Todos os direitos reservados</p>
+  </footer>
+
+  <!-- ════════════════════ ADMIN ════════════════════ -->
+  <button id="admin-toggle-btn" onclick="toggleAdmin()" title="Painel Administrativo">⚙️</button>
+  <div id="admin-overlay" onclick="closeAdmin()"></div>
+
+  <div id="admin-panel">
+    <div class="admin-header">
+      <div>
+        <h2>⚙️ Painel Administrativo</h2>
+        <p>Laços do Coração</p>
+      </div>
+      <button class="admin-close" onclick="closeAdmin()">✕</button>
+    </div>
+
+    <!-- LOGIN -->
+    <div class="admin-login" id="admin-login-view">
+      <h3>Área Restrita</h3>
+      <p>Introduza a sua senha de administrador para continuar.</p>
+      <div class="admin-field"><label>Senha</label><input type="password" id="admin-pass" placeholder="••••••••" onkeydown="if(event.key==='Enter')doLogin()"/></div>
+      <p class="admin-error" id="admin-error">Senha incorreta. Tente novamente.</p>
+      <button class="admin-login-btn" onclick="doLogin()">Entrar no Painel →</button>
+      <p style="font-size:0.72rem;color:var(--muted);margin-top:16px;font-family:'DM Sans',sans-serif;">Senha padrão: <strong>admin123</strong></p>
+    </div>
+
+    <!-- ADMIN BODY -->
+    <div class="admin-body" id="admin-body">
+      <div class="admin-tabs">
+        <button class="admin-tab active" onclick="switchAdminTab('artigos',this)">📝 Artigos</button>
+        <button class="admin-tab" onclick="switchAdminTab('hero',this)">🏠 Destaque</button>
+        <button class="admin-tab" onclick="switchAdminTab('sobre',this)">👤 Sobre</button>
+        <button class="admin-tab" onclick="switchAdminTab('config',this)">🔧 Config</button>
+      </div>
+      <div class="admin-content">
+
+        <!-- ARTIGOS -->
+        <div class="admin-section active" id="admin-artigos">
+          <h3>Gerir Artigos</h3>
+          <div class="add-article-form">
+            <h4>➕ Novo Artigo</h4>
+            <div class="admin-field"><label>Título</label><input type="text" id="new-title" placeholder="Título do artigo"/></div>
+            <div class="admin-field"><label>Categoria</label>
+              <select id="new-cat">
+                <option value="amor">Amor & Casal</option>
+                <option value="autoconhecimento">Autoconhecimento</option>
+                <option value="familia">Família</option>
+                <option value="comunicacao">Comunicação</option>
+                <option value="historias">Histórias Reais</option>
+              </select>
+            </div>
+            <div class="admin-field"><label>Resumo (excerpt)</label><textarea id="new-excerpt" placeholder="Breve descrição do artigo..."></textarea></div>
+            <div class="admin-field"><label>Conteúdo completo</label><textarea id="new-content" style="height:180px;" placeholder="Escreva o artigo completo aqui. Use **negrito**, §§ para novo parágrafo separado..."></textarea></div>
+            <div class="admin-field"><label>Tempo de leitura (min)</label><input type="number" id="new-time" value="5" min="1" max="60"/></div>
+            <button class="admin-save-btn" onclick="addArticle()">✦ Publicar Artigo</button>
+          </div>
+          <h4>📋 Artigos Publicados</h4>
+          <div class="article-manage-list" id="article-manage-list"></div>
+        </div>
+
+        <!-- HERO -->
+        <div class="admin-section" id="admin-hero">
+          <h3>Artigo em Destaque (Hero)</h3>
+          <div class="admin-field"><label>Título do Destaque</label><input type="text" id="hero-edit-title" placeholder="Título principal"/></div>
+          <div class="admin-field"><label>Resumo</label><textarea id="hero-edit-excerpt" placeholder="Frase de destaque do artigo..."></textarea></div>
+          <div class="admin-field"><label>Data e tempo</label><input type="text" id="hero-edit-meta" placeholder="ex: 28 de Abril, 2025 · 6 min de leitura"/></div>
+          <button class="admin-save-btn" onclick="saveHero()">✦ Atualizar Destaque</button>
+        </div>
+
+        <!-- SOBRE -->
+        <div class="admin-section" id="admin-sobre">
+          <h3>Página Sobre</h3>
+          <div class="admin-field"><label>Nome da Autora/Autor</label><input type="text" id="edit-author-name" placeholder="Nome completo"/></div>
+          <div class="admin-field"><label>Cargo / Papel</label><input type="text" id="edit-author-role" placeholder="ex: Escritora · Terapeuta · Fundadora"/></div>
+          <div class="admin-field"><label>Biografia</label><textarea id="edit-author-bio" style="height:160px;" placeholder="Conte a sua história..."></textarea></div>
+          <div class="admin-field"><label>Missão do Blog</label><textarea id="edit-mission" placeholder="Qual é a missão do seu blog?"></textarea></div>
+          <div class="admin-field"><label>Abordagem Editorial</label><textarea id="edit-approach" placeholder="Como é que você cria conteúdo?"></textarea></div>
+          <button class="admin-save-btn" onclick="saveSobre()">✦ Guardar Alterações</button>
+        </div>
+
+        <!-- CONFIG -->
+        <div class="admin-section" id="admin-config">
+          <h3>Configurações Gerais</h3>
+          <div class="admin-field"><label>Alterar Senha de Admin</label><input type="password" id="new-pass" placeholder="Nova senha"/></div>
+          <div class="admin-field"><label>Confirmar Nova Senha</label><input type="password" id="confirm-pass" placeholder="Repetir nova senha"/></div>
+          <button class="admin-save-btn" onclick="changePassword()">✦ Alterar Senha</button>
+          <div style="margin-top:32px;padding-top:24px;border-top:1px solid var(--border);">
+            <h4>⚠️ Zona de Perigo</h4>
+            <p style="font-size:0.85rem;color:var(--muted);margin:12px 0 16px;">Repor todos os artigos e configurações para os valores originais.</p>
+            <button class="admin-save-btn" style="background:#c0392b;" onclick="resetAll()">Repor Tudo</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="admin-toast" id="admin-toast">✓ Guardado com sucesso!</div>
+
+  <script>
+  // ═══════════════════════════════════════════════
+  // DATA STORE
+  // ═══════════════════════════════════════════════
+  const DEFAULT_ARTICLES = [
+    { id:1, title:"7 Sinais de que o Seu Relacionamento Está Crescendo Juntos", category:"amor", excerpt:"Crescer a dois exige mais do que amor — exige intenção, paciência e conversas honestas que mudam tudo.", content:`<p>Todo relacionamento passa por fases. Há momentos de pura euforia, outros de dúvida, e outros ainda de uma paz tão profunda que só quem a viveu consegue descrever. Mas como saber se vocês estão, de facto, a crescer juntos?</p><h2>1. Conseguem discutir sem se destruir</h2><p>O conflito saudável não é ausência de discussão — é a forma como vocês discutem. Quando dois parceiros crescem juntos, aprendem a discordar sem atacar a essência um do outro.</p><blockquote>Um casal que cresce junto não evita o conflito. Aprende a atravessá-lo com respeito.</blockquote><h2>2. Os planos individuais incluem o outro</h2><p>Crescer junto não significa fundir-se. Significa que, quando sonham o futuro, vocês aparecem naturalmente nos planos um do outro — sem pressão, sem medo.</p><h2>3. A admiração não desapareceu</h2><p>Ainda se admiram? Ainda notam as qualidades um do outro? A admiração mútua é um dos melhores termómetros da saúde de um relacionamento.</p><h2>4. Podem ser vulneráveis sem sentir vergonha</h2><p>A vulnerabilidade é o coração da intimidade real. Quando dois parceiros crescem juntos, constroem um espaço onde é seguro ser imperfeito.</p><h2>5. Apoiam os sonhos individuais</h2><p>Um relacionamento saudável não é uma prisão dourada. É uma base segura a partir da qual cada um pode voar mais alto.</p><h2>6. Riem juntos — muitas vezes</h2><p>O riso partilhado é um idioma próprio. Casais que crescem juntos cultivam o humor como forma de conexão e de leveza.</p><h2>7. Escolhem-se todos os dias</h2><p>O amor começa como sentimento, mas matura como escolha. Quando ambos se escolhem ativamente — nos dias fáceis e nos difíceis — estão a crescer juntos de verdade.</p>`, time:6, date:"28 Abr 2025", emoji:"💑", colorClass:"c1" },
+    { id:2, title:"Como Ter Conversas Difíceis Sem Magoar o Outro", category:"comunicacao", excerpt:"Aprender a comunicar sentimentos sem atacar o parceiro é a habilidade mais valiosa de qualquer relação.", content:`<p>Existe uma arte nas conversas difíceis. E como toda arte, ela pode ser aprendida — com prática, intenção e uma boa dose de paciência consigo mesmo.</p><h2>Escolha o momento certo</h2><p>Nunca inicie uma conversa difícil quando um dos dois está com fome, cansado ou no meio de outra situação stressante. O momento certo não é o momento perfeito — é o momento disponível.</p><h2>Fale na primeira pessoa</h2><p>Em vez de "Tu nunca me ouves", tente "Eu sinto-me ignorado quando...". Esta simples mudança transforma um ataque num pedido.</p><blockquote>"Quando mudamos de 'tu' para 'eu', deixamos de acusar e começamos a partilhar."</blockquote><h2>Ouça para entender, não para responder</h2><p>A maioria de nós ouve à espera de falar. Ouvir de verdade — escuta ativa — é uma das formas mais profundas de amor.</p><h2>Peça tempo, se precisar</h2><p>Se a conversa estiver a ficar intensa demais, é legítimo pedir uma pausa. "Preciso de 20 minutos para me acalmar e depois continuamos" é muito melhor do que dizer o que vai magoar.</p><h2>Termine com amor</h2><p>Independentemente do resultado da conversa, terminem com um gesto de afeto. Um abraço, um "eu gosto de ti", um "obrigado por falares comigo". O relacionamento é maior do que o problema.</p>`, time:5, date:"25 Abr 2025", emoji:"💬", colorClass:"c1" },
+    { id:3, title:"Ciúme Saudável vs. Ciúme Tóxico: Onde Está a Linha?", category:"amor", excerpt:"Nem todo ciúme é veneno — mas saber reconhecer quando ele ultrapassa os limites pode salvar a sua relação.", content:`<p>O ciúme é uma das emoções mais mal compreendidas nos relacionamentos. Rotulado ora como prova de amor, ora como sinal de toxicidade, a verdade é que ele existe num espectro.</p><h2>O ciúme saudável</h2><p>Sentir uma pontada de ciúme quando o seu parceiro recebe atenção de alguém é completamente normal. É uma resposta humana que, quando gerida com maturidade, pode até reforçar a conexão — lembrando-nos do quanto valorizamos a pessoa.</p><h2>Quando o ciúme se torna tóxico</h2><p>O ciúme torna-se problemático quando começa a controlar comportamentos: verificar o telemóvel, proibir amizades, questionar constantemente. Neste ponto, deixou de ser emoção e tornou-se mecanismo de controlo.</p><blockquote>O ciúme saudável diz "eu valorizo-te". O ciúme tóxico diz "eu possuo-te".</blockquote><h2>Perguntas para se auto-avaliar</h2><ul><li>O meu ciúme é baseado em factos ou em insegurança?</li><li>As minhas reações respeitam a autonomia do meu parceiro?</li><li>Consigo exprimir o ciúme sem acusar?</li></ul><h2>O que fazer com ciúme tóxico</h2><p>Se reconhece padrões tóxicos em si mesmo, o primeiro passo é a honestidade. Trabalhar o ciúme envolve trabalhar a autoestima — e isso, muitas vezes, pede apoio profissional.</p>`, time:7, date:"22 Abr 2025", emoji:"💞", colorClass:"c2" },
+    { id:4, title:"O Que os Seus Padrões Amorosos Dizem Sobre Você", category:"autoconhecimento", excerpt:"Repetimos padrões que não percebemos. Entender a raiz é o primeiro passo para escolher diferente.", content:`<p>Já reparou que tende a atrair sempre o mesmo tipo de pessoa? Ou que os seus relacionamentos terminam sempre pelo mesmo motivo? Isso não é coincidência — são padrões.</p><h2>O que são padrões amorosos?</h2><p>São formas repetidas de pensar, sentir e comportar-nos em contextos amorosos. Formam-se na infância, através das relações com os nossos cuidadores, e depois reproduzem-se — quase sempre inconscientemente.</p><h2>Estilos de apego</h2><p>A teoria do apego divide-nos em quatro estilos principais: seguro, ansioso, evitante e desorganizado. Cada um tem padrões distintos de como busca e mantém intimidade.</p><blockquote>Não somos prisioneiros dos nossos padrões. Mas precisamos de os ver antes de os poder mudar.</blockquote><h2>Como identificar os seus padrões</h2><ul><li>Analise os seus últimos três relacionamentos: o que têm em comum?</li><li>Que emoções surgem quando alguém se aproxima muito?</li><li>Como reage quando sente que vai ser abandonado?</li></ul><h2>Mudar padrões é possível</h2><p>A neuroplasticidade demonstra que o cérebro é capaz de criar novos caminhos. Com consciência, terapia e relações mais saudáveis, é possível reescrever a história que o apego escreveu em nós.</p>`, time:8, date:"18 Abr 2025", emoji:"🧠", colorClass:"c3" },
+    { id:5, title:"Como Criar Filhos em Meio a Diferenças de Opinião no Casal", category:"familia", excerpt:"Divergir na criação dos filhos é normal. A questão é como transformar essa diferença em complementaridade.", content:`<p>Dois adultos com histórias diferentes, valores diferentes e formas diferentes de ver o mundo decidiram ter um filho. É natural — e quase inevitável — que nem sempre concordem em tudo.</p><h2>A diferença como riqueza</h2><p>Quando bem gerida, a divergência de opiniões no casal pode ser um presente para os filhos. Aprendem que existem formas diferentes de ver as situações — e que é possível discordar com respeito.</p><h2>O perigo da inconsistência</h2><p>O problema não é divergir — é quando a criança aprende a usar essa divergência em seu favor, ou quando os pais se contradizem na frente dos filhos de forma repetida e intensa.</p><blockquote>Os filhos precisam de sentir que os pais, mesmo diferentes, são uma equipa.</blockquote><h2>Estratégias práticas</h2><ul><li>Discutam as diferenças longe das crianças;</li><li>Apresentem uma frente unida nas decisões finais;</li><li>Identifiquem os valores que partilham — esses são a base;</li><li>Considerem sessões de mediação familiar se necessário.</li></ul><h2>O papel da humildade</h2><p>Nenhum de nós tem o manual perfeito da parentalidade. Reconhecer que o parceiro pode ter uma perspetiva válida — mesmo que diferente da nossa — é já metade do caminho.</p>`, time:6, date:"15 Abr 2025", emoji:"🌱", colorClass:"c4" },
+    { id:6, title:'"Recomeçamos Depois de Uma Traição" — A História de Ana e Pedro', category:"historias", excerpt:"Perdoar não significou esquecer. Significou escolher construir algo novo sobre os escombros do que quebrou.", content:`<p><em>Esta história foi partilhada voluntariamente pelo casal e publicada com autorização. Os nomes foram mantidos a pedido próprio.</em></p><p>Ana e Pedro estavam juntos há 11 anos quando aconteceu. "Soube pelo telemóvel dele", conta Ana. "Entrou tudo em colapso de uma vez."</p><h2>O período de crise</h2><p>Nos meses que se seguiram, Ana oscilou entre querer terminar e querer entender. Pedro pediu ajuda terapêutica de imediato. "Sabia que tinha destruído algo precioso. Precisava de perceber porquê."</p><blockquote>"Não voltámos ao que éramos. Criámos algo novo, mais honesto, mais difícil — mas mais nosso."</blockquote><h2>O processo de reconstrução</h2><p>Decidiram tentar com o apoio de um terapeuta de casais. Foram meses de conversas dolorosas, de revelações difíceis, de noites sem dormir. Mas também de uma intimidade que nunca tinham alcançado antes.</p><h2>O que aprenderam</h2><ul><li>A traição foi um sintoma de problemas que já existiam;</li><li>O perdão é um processo, não um momento;</li><li>Reconstruir exige que ambos queiram genuinamente;</li><li>Pedir ajuda profissional foi a decisão mais importante.</li></ul><p>Hoje, quatro anos depois, Ana e Pedro dizem que têm um relacionamento mais forte do que antes. Não porque a traição foi boa — mas porque decidiram ser corajosos o suficiente para a atravessar juntos.</p>`, time:10, date:"10 Abr 2025", emoji:"✨", colorClass:"c5" },
+    { id:7, title:"Os 5 Idiomas do Amor e Como Identificar o Seu", category:"amor", excerpt:"Nem todos amamos da mesma forma. Descobrir a sua linguagem afetiva pode transformar o seu relacionamento.", content:`<p>Gary Chapman, após décadas de trabalho como conselheiro conjugal, identificou cinco formas distintas de expressar e receber amor. Compreendê-las pode mudar tudo.</p><h2>1. Palavras de Afirmação</h2><p>Para estas pessoas, as palavras têm um peso enorme. Um "eu gosto de ti", um elogio genuíno, ou uma mensagem de incentive fazem toda a diferença.</p><h2>2. Atos de Serviço</h2><p>Para quem tem este idioma, ações falam mais alto do que palavras. Preparar uma refeição, fazer uma tarefa sem pedir — esses gestos comunicam amor de forma eloquente.</p><h2>3. Presentes</h2><p>Não se trata de materialismo — trata-se de simbolismo. Um presente pensado, mesmo que pequeno, representa "estive a pensar em ti".</p><h2>4. Tempo de Qualidade</h2><p>Atenção total, sem distrações. Uma conversa, um passeio, um jantar onde os telemóveis ficam no bolso. Para estas pessoas, a presença plena é o maior presente.</p><h2>5. Toque Físico</h2><p>Um abraço, segurar a mão, um beijo espontâneo. Para quem tem este idioma, o toque transmite segurança, afeto e conexão de forma visceral.</p><blockquote>Amamos da forma como queremos ser amados. Conhecer o idioma do outro é aprender a falar o idioma do amor deles.</blockquote>`, time:7, date:"5 Abr 2025", emoji:"💌", colorClass:"c6" },
+    { id:8, title:"Apego Ansioso: Por Que Você Sufoca Quem Ama", category:"autoconhecimento", excerpt:"O medo de perder pode transformar-se no maior motor de afastamento. Entender o apego ansioso é o primeiro passo.", content:`<p>Se você se reconhece verificando o telemóvel constantemente à espera de uma resposta, sentindo pânico quando o seu parceiro demora a responder, ou precisando de reassurance constante — pode estar a viver com um estilo de apego ansioso.</p><h2>De onde vem o apego ansioso?</h2><p>Geralmente tem raízes na infância, em experiências de cuidado inconsistente. Quando não sabemos se o cuidador vai estar disponível, aprendemos a hipervigilância como estratégia de sobrevivência emocional.</p><h2>Como se manifesta nos relacionamentos</h2><ul><li>Necessidade constante de confirmação de amor;</li><li>Medo intenso de abandono ou rejeição;</li><li>Ciúme excessivo baseado em insegurança;</li><li>Tendência a interpretar neutralidade como rejeição.</li></ul><blockquote>O apego ansioso não é fraqueza. É uma estratégia que um dia fez sentido e que já não serve.</blockquote><h2>O caminho para o apego seguro</h2><p>A boa notícia: o estilo de apego não é permanente. Com terapia, autoconsciência e relações mais seguras, é possível caminhar em direção ao apego seguro — onde o amor não precisa de ser conquistado a cada momento.</p>`, time:8, date:"1 Abr 2025", emoji:"🔒", colorClass:"c3" },
+  ];
+
+  const DEFAULT_HERO = { title:"7 Sinais de que o Seu Relacionamento Está Crescendo Juntos", excerpt:"Crescer a dois exige mais do que amor — exige intenção, paciência e conversas honestas que mudam tudo.", meta:"28 de Abril, 2025 · 6 min de leitura", articleId:1 };
+
+  const DEFAULT_ABOUT = {
+    authorName:"Ana Luísa Ferreira",
+    authorRole:"Escritora · Conselheira de Relacionamentos · Fundadora",
+    authorBio:"Sou terapeuta de casais há mais de 10 anos e acredito que a maioria dos problemas nos relacionamentos nasce de uma falta de autoconhecimento e de comunicação. Criei o Laços do Coração para ser o espaço que eu gostaria de ter encontrado quando mais precisei: sem julgamentos, cheio de verdade e de amor.",
+    mission:"O Laços do Coração existe para tornar o conhecimento sobre relacionamentos saudáveis acessível a todos. Acreditamos que informação clara, carinhosa e prática pode transformar a forma como as pessoas se relacionam — com os outros e consigo mesmas.",
+    approach:"Todos os artigos são escritos com base em psicologia positiva, terapia cognitivo-comportamental e na escuta ativa de centenas de histórias reais. Não oferecemos fórmulas mágicas — oferecemos ferramentas que funcionam na vida real."
+  };
+
+  function loadData() {
+    try {
+      return {
+        articles: JSON.parse(localStorage.getItem('lc_articles')) || DEFAULT_ARTICLES,
+        hero: JSON.parse(localStorage.getItem('lc_hero')) || DEFAULT_HERO,
+        about: JSON.parse(localStorage.getItem('lc_about')) || DEFAULT_ABOUT,
+        adminPass: localStorage.getItem('lc_pass') || 'admin123'
+      };
+    } catch(e) {
+      return { articles: DEFAULT_ARTICLES, hero: DEFAULT_HERO, about: DEFAULT_ABOUT, adminPass:'admin123' };
+    }
+  }
+
+  function saveData(key, val) {
+    try { localStorage.setItem(key, JSON.stringify(val)); } catch(e){}
+  }
+
+  let DB = loadData();
+
+  // ═══════════════════════════════════════════════
+  // NAVIGATION
+  // ═══════════════════════════════════════════════
+  const NAV_PAGES = ['inicio','amor','autoconhecimento','familia','comunicacao','historias','sobre','artigo','contato','privacidade','termos'];
+
+  function showPage(name) {
+    NAV_PAGES.forEach(p => {
+      const el = document.getElementById('page-'+p);
+      if(el) el.classList.toggle('active', p===name);
+    });
+    document.querySelectorAll('nav a').forEach(a => {
+      a.classList.toggle('active', a.dataset.page === name);
+    });
+    window.scrollTo({top:0, behavior:'smooth'});
+    if(name !== 'artigo') renderPage(name);
+  }
+
+  function renderPage(name) {
+    switch(name) {
+      case 'inicio': renderHome(); break;
+      case 'amor': renderCategory('amor','amor-list'); break;
+      case 'autoconhecimento': renderCategory('autoconhecimento','autoconhecimento-list'); break;
+      case 'familia': renderCategory('familia','familia-list'); break;
+      case 'comunicacao': renderCategory('comunicacao','comunicacao-list'); break;
+      case 'historias': renderCategory('historias','historias-list'); break;
+      case 'sobre': renderSobre(); break;
+    }
+  }
+
+  function renderHome() {
+    // Hero
+    const h = DB.hero;
+    document.getElementById('hero-title').textContent = h.title;
+    document.getElementById('hero-excerpt').textContent = h.excerpt;
+    document.getElementById('hero-meta').textContent = h.meta;
+
+    // Articles (exclude featured)
+    const list = document.getElementById('home-articles-list');
+    const articles = DB.articles.filter(a => a.id !== (h.articleId||1)).slice(0,6);
+    list.innerHTML = articles.map((a,i) => articleCardHTML(a, i===1 ? 'incontent' : '')).join('');
+
+    // Popular
+    const pop = document.getElementById('popular-list');
+    pop.innerHTML = DB.articles.slice(0,4).map((a,i) => `
+      <div class="popular-item" onclick="openArticle(${a.id})">
+        <span class="popular-num">0${i+1}</span>
+        <span class="popular-title">${a.title}</span>
+      </div>`).join('');
+  }
+
+  function renderCategory(cat, listId) {
+    const el = document.getElementById(listId);
+    const arts = DB.articles.filter(a => a.category === cat);
+    if(arts.length === 0) {
+      el.innerHTML = `<p style="color:var(--muted);font-style:italic;padding:20px 0;">Ainda não há artigos nesta categoria. Em breve!</p>`;
+    } else {
+      el.innerHTML = arts.map(a => articleCardHTML(a,'')).join('');
+    }
+  }
+
+  const CAT_LABELS = { amor:'Amor & Casal', autoconhecimento:'Autoconhecimento', familia:'Família', comunicacao:'Comunicação', historias:'Histórias Reais' };
+
+  function articleCardHTML(a, adAfter) {
+    const colors = ['c1','c2','c3','c4','c5','c6','c7'];
+    const cc = a.colorClass || colors[a.id % colors.length];
+    let html = `<article class="article-card" onclick="openArticle(${a.id})">
+      <div class="card-thumb ${cc}">${a.emoji||'📖'}</div>
+      <div class="card-body">
+        <span class="card-category">${CAT_LABELS[a.category]||a.category}</span>
+        <h2 class="card-title">${a.title}</h2>
+        <p class="card-excerpt">${a.excerpt}</p>
+        <p class="card-meta">${a.date||''} · ${a.time||5} min</p>
+      </div>
+    </article>`;
+    if(adAfter === 'incontent') {
+      html += `<div id="adsterra-incontent"><div class="ad-zone" style="width:336px;min-height:280px;max-width:100%;"><span class="ad-size">Espaço para Anúncio · 336×280</span></div></div>`;
+    }
+    return html;
+  }
+
+  function openArticle(id) {
+    const a = id === 'featured' ? DB.articles.find(x=>x.id===(DB.hero.articleId||1)) : DB.articles.find(x=>x.id==id);
+    if(!a) return;
+    const container = document.getElementById('article-full-content');
+    container.innerHTML = `
+      <span class="af-category">${CAT_LABELS[a.category]||a.category}</span>
+      <h1>${a.title}</h1>
+      <p class="af-meta">${a.date||''} · ${a.time||5} min de leitura</p>
+      ${a.content}
+      <div class="ornament" style="margin-top:40px;">✦ ✦ ✦</div>
+      <button class="back-btn" onclick="history.go(-1) || showPage('inicio')">← Voltar</button>`;
+    showPage('artigo');
+  }
+
+  function renderSobre() {
+    const ab = DB.about;
+    document.getElementById('about-author-name').textContent = ab.authorName;
+    document.getElementById('about-author-role').textContent = ab.authorRole;
+    document.getElementById('about-author-bio').textContent = ab.authorBio;
+    document.getElementById('about-mission').textContent = ab.mission;
+    document.getElementById('about-approach').textContent = ab.approach;
+    document.getElementById('stat-articles').textContent = DB.articles.length;
+  }
+
+  // ═══════════════════════════════════════════════
+  // FAQ
+  // ═══════════════════════════════════════════════
+  function toggleFaq(el) { el.classList.toggle('open'); }
+
+  // ═══════════════════════════════════════════════
+  // CONTACT
+  // ═══════════════════════════════════════════════
+  function submitContact(btn) {
+    btn.textContent = '✓ Mensagem Enviada!';
+    btn.style.background = '#27ae60';
+    setTimeout(()=>{ btn.textContent='Enviar Mensagem →'; btn.style.background=''; }, 3000);
+  }
+
+  function subscribeNewsletter(btn) {
+    btn.textContent = '✓ Subscrito!';
+    btn.style.background = '#27ae60';
+    setTimeout(()=>{ btn.textContent='Quero Receber ✦'; btn.style.background=''; }, 3000);
+  }
+
+  // ═══════════════════════════════════════════════
+  // ADMIN
+  // ═══════════════════════════════════════════════
+  function toggleAdmin() {
+    document.getElementById('admin-panel').classList.toggle('open');
+    document.getElementById('admin-overlay').classList.toggle('open');
+  }
+  function closeAdmin() {
+    document.getElementById('admin-panel').classList.remove('open');
+    document.getElementById('admin-overlay').classList.remove('open');
+  }
+
+  function doLogin() {
+    const pass = document.getElementById('admin-pass').value;
+    if(pass === DB.adminPass) {
+      document.getElementById('admin-login-view').style.display = 'none';
+      document.getElementById('admin-body').classList.add('visible');
+      loadAdminData();
+    } else {
+      document.getElementById('admin-error').style.display = 'block';
+    }
+  }
+
+  function switchAdminTab(tab, btn) {
+    document.querySelectorAll('.admin-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.admin-section').forEach(s => s.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('admin-'+tab).classList.add('active');
+  }
+
+  function loadAdminData() {
+    // Hero
+    const h = DB.hero;
+    document.getElementById('hero-edit-title').value = h.title;
+    document.getElementById('hero-edit-excerpt').value = h.excerpt;
+    document.getElementById('hero-edit-meta').value = h.meta;
+    // Sobre
+    const ab = DB.about;
+    document.getElementById('edit-author-name').value = ab.authorName;
+    document.getElementById('edit-author-role').value = ab.authorRole;
+    document.getElementById('edit-author-bio').value = ab.authorBio;
+    document.getElementById('edit-mission').value = ab.mission;
+    document.getElementById('edit-approach').value = ab.approach;
+    // Articles
+    renderManageList();
+  }
+
+  function renderManageList() {
+    const el = document.getElementById('article-manage-list');
+    el.innerHTML = DB.articles.map(a => `
+      <div class="article-manage-item">
+        <div>
+          <div class="ami-title">${a.title}</div>
+          <div class="ami-cat">${CAT_LABELS[a.category]||a.category}</div>
+        </div>
+        <div class="ami-actions">
+          <button class="ami-del-btn" onclick="deleteArticle(${a.id})">Apagar</button>
+        </div>
+      </div>`).join('');
+  }
+
+  function addArticle() {
+    const title = document.getElementById('new-title').value.trim();
+    const cat = document.getElementById('new-cat').value;
+    const excerpt = document.getElementById('new-excerpt').value.trim();
+    const content = document.getElementById('new-content').value.trim();
+    const time = parseInt(document.getElementById('new-time').value) || 5;
+    if(!title || !excerpt) { alert('Por favor, preencha o título e o resumo.'); return; }
+    const now = new Date();
+    const dateStr = now.toLocaleDateString('pt-PT', {day:'numeric',month:'short',year:'numeric'});
+    const emojis = { amor:'💑', autoconhecimento:'🧠', familia:'🌱', comunicacao:'💬', historias:'✨' };
+    const colors = ['c1','c2','c3','c4','c5','c6','c7'];
+    const newId = Math.max(...DB.articles.map(a=>a.id), 0) + 1;
+    const article = {
+      id: newId, title, category:cat, excerpt,
+      content: content ? `<p>${content.replace(/\n\n/g,'</p><p>')}</p>` : `<p>${excerpt}</p>`,
+      time, date: dateStr,
+      emoji: emojis[cat]||'📖',
+      colorClass: colors[newId % colors.length]
+    };
+    DB.articles.unshift(article);
+    saveData('lc_articles', DB.articles);
+    renderManageList();
+    document.getElementById('new-title').value='';
+    document.getElementById('new-excerpt').value='';
+    document.getElementById('new-content').value='';
+    showToast('✓ Artigo publicado com sucesso!');
+    renderHome();
+  }
+
+  function deleteArticle(id) {
+    if(!confirm('Apagar este artigo permanentemente?')) return;
+    DB.articles = DB.articles.filter(a => a.id !== id);
+    saveData('lc_articles', DB.articles);
+    renderManageList();
+    showToast('Artigo apagado.');
+    renderHome();
+  }
+
+  function saveHero() {
+    DB.hero.title = document.getElementById('hero-edit-title').value;
+    DB.hero.excerpt = document.getElementById('hero-edit-excerpt').value;
+    DB.hero.meta = document.getElementById('hero-edit-meta').value;
+    saveData('lc_hero', DB.hero);
+    renderHome();
+    showToast('✓ Destaque atualizado!');
+  }
+
+  function saveSobre() {
+    DB.about.authorName = document.getElementById('edit-author-name').value;
+    DB.about.authorRole = document.getElementById('edit-author-role').value;
+    DB.about.authorBio = document.getElementById('edit-author-bio').value;
+    DB.about.mission = document.getElementById('edit-mission').value;
+    DB.about.approach = document.getElementById('edit-approach').value;
+    saveData('lc_about', DB.about);
+    renderSobre();
+    showToast('✓ Página Sobre atualizada!');
+  }
+
+  function changePassword() {
+    const np = document.getElementById('new-pass').value;
+    const cp = document.getElementById('confirm-pass').value;
+    if(!np) { alert('Introduza uma nova senha.'); return; }
+    if(np !== cp) { alert('As senhas não coincidem.'); return; }
+    DB.adminPass = np;
+    try { localStorage.setItem('lc_pass', np); } catch(e){}
+    showToast('✓ Senha alterada com sucesso!');
+    document.getElementById('new-pass').value='';
+    document.getElementById('confirm-pass').value='';
+  }
+
+  function resetAll() {
+    if(!confirm('Isto irá apagar todos os artigos e configurações personalizadas. Continuar?')) return;
+    try {
+      localStorage.removeItem('lc_articles');
+      localStorage.removeItem('lc_hero');
+      localStorage.removeItem('lc_about');
+      localStorage.removeItem('lc_pass');
+    } catch(e){}
+    DB = { articles:[...DEFAULT_ARTICLES], hero:{...DEFAULT_HERO}, about:{...DEFAULT_ABOUT}, adminPass:'admin123' };
+    loadAdminData();
+    renderHome();
+    showToast('✓ Tudo reposto para os valores originais.');
+  }
+
+  function showToast(msg) {
+    const t = document.getElementById('admin-toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(()=>t.classList.remove('show'), 2800);
+  }
+
+  // ═══════════════════════════════════════════════
+  // INIT
+  // ═══════════════════════════════════════════════
+  renderHome();
+  </script>
+</body>
+</html>
